@@ -1,0 +1,135 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#root,
+.App,
+.holder {
+	height: 100%;
+}
+
+.InputSection {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	
+	.MuiInput-root {
+		display: block;
+		margin-top: 10px;
+	}
+}
+.OutputSection {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 300px);
+	height: 100%;
+	font-family: Roboto;
+
+	.holder {
+		.table {
+			width: calc(100% - 40px);
+			height: 380px;
+			overflow-x: auto;
+			margin: 20px;
+
+			.header,
+			.content {
+				display: grid;
+
+				.row {
+					background-color: #f0f0f0;
+					display: grid;
+					grid-template-columns: 350px repeat(361, 100px);
+
+					.cell {
+						text-align: right;
+						padding: 3px 5px;
+					}
+					.cell:first-child {
+						white-space: nowrap;
+						text-align: left;
+						background-color: #ffffff;
+						color: #a0a0a0;
+						font-weight: 300;
+						position: sticky;
+						left: 0px;
+					}
+				}
+				.row:nth-child(even) {
+					background-color: #f9f9f9;
+				}
+				.row:first-child {
+					background-color: #ffffff;
+				}
+			}	
+		}
+		.table2 {
+			height: 120px;
+			
+			.content {
+				.row {
+					grid-template-columns: 450px repeat(361, 100px);
+				}
+			}
+		}
+		.table3 {
+			height: 120px;
+			
+			.header,
+			.content {
+				.row {
+					grid-template-columns: repeat(7, 200px);
+					
+					.cell:first-child {
+						position: static;
+						background-color: #ffffff;
+						color: #000000;
+						font-weight: 400
+					}
+					.cell {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+.spinner-holder {
+	padding: 20px 0px;
+	text-align: center;
+}
+.spinner {
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #a0a0a0;
+	border-radius: 100%;  
+	-webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+	width: 60px;
+	height: 60px;
+}
+
+@-webkit-keyframes sk-scaleout {
+	0% {
+		-webkit-transform: scale(0) 
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+		opacity: 0;
+	}
+}
+
+@keyframes sk-scaleout {
+	0% { 
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+		opacity: 0;
+	}
+} 
